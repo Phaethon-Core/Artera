@@ -7,8 +7,8 @@ __pycache__/
 
 # Python / FastAPI
 /server/.art/
-server/.pytest_cache/
-server/.mypy_cache/
+alembic.ini
+alembic/
 
 # Node / React
 /client/node_modules/
