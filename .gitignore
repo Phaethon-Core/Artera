@@ -9,6 +9,7 @@ __pycache__/
 /server/.art/
 alembic.ini
 alembic/
+/server/api.json
 
 # Node / React
 /client/node_modules/

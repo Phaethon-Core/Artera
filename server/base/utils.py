@@ -31,7 +31,7 @@ def otp_rate_limit(email: str, timestamps: dict, max_requests: int, window: int)
 
 
 def generate_otp():
-    return str(secrets.randbelow(900000)+1000000)
+    return str(secrets.randbelow(900000)+100000)
 
 
 def hash_otp(otp: str):

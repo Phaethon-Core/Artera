@@ -17,7 +17,7 @@ class User(Base):
         timezone.utc), nullable=False)
     updated_at = Column(DateTime(timezone=True), default=lambda: datetime.now(
         timezone.utc), nullable=False)
-
+    role = Column(String, default="user", nullable=False)
     profile = relationship("Profile", back_populates="user", uselist=False)
 
 

@@ -37,13 +37,17 @@ def get_user_profile(user_id, db):
     return profile
 
 
-def create_or_update_user_profile(user_id, payload, db):
+def create_or_update_user_profile(user_id, req_user, payload, db):
     user = db.query(user_models.User).filter(
         user_models.User.id == user_id
     ).first()
 
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
+
+    if str(req_user) != str(user.id):
+        print(f"req_user: {req_user}, user.id: {user.id}")
+        raise HTTPException(status_code=403, detail="Unauthorized")
 
     profile = db.query(user_models.Profile).filter(
         user_models.Profile.user_id == user_id
