@@ -54,8 +54,8 @@ def get_user_profile(
     _: dict = Depends(require_roles(["admin", "user"]))
 ):
     try:
-        req_user = Request.user
-        print(req_user)
+        # req_user = Request.user
+        # print(req_user)
         user = user_service.get_user_profile(user_id, db)
         return {"user": user}
     except HTTPException as e:
